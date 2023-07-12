@@ -1,0 +1,21 @@
+.cardBox {
+    background-color: #252731;
+    width: 100%;
+    margin-left: 40px;
+    margin-top: 50px;
+    height: 100%;
+    overflow: scroll;
+}
+
+.cardBox::-webkit-scrollbar {
+  width: 10px; 
+  
+}
+
+.cardBox::-webkit-scrollbar-thumb {
+  background-color: #17181f; 
+}
+
+.cardBox::-moz-scrollbar-thumb {
+  background-color: #17181f;
+}

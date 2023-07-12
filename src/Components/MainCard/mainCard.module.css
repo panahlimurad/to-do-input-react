@@ -1,0 +1,8 @@
+.mainCard {
+    border-radius: 10px;
+    width: 500px;
+    height: 600px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #252731;
+}
