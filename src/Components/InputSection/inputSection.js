@@ -1,4 +1,5 @@
 import React from "react";
+import { nanoid } from "nanoid";
 import { PropTypes } from "prop-types";
 import style from "./inputSection.module.css"
 
@@ -21,7 +22,13 @@ export class InputSection extends React.Component{
     }
 
     submitText() {
-        this.props.addToDo(this.state.text)
+
+        const newObj = {
+            id: nanoid(),
+            text: this.state.text
+        }
+
+        this.props.addToDo(newObj)
 
         this.setState({text:""})
     }
@@ -36,5 +43,5 @@ export class InputSection extends React.Component{
 }
 
 InputSection.propTypes = {
-    addToDo :PropTypes.func,
+    addToDo : PropTypes.func,
 }

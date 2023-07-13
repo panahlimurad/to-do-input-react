@@ -1,25 +1,24 @@
 import React from "react";
 import style from "./cardBox.module.css"
-import { Cards } from "../Cards/cards";
+import { PropTypes } from "prop-types";
+import { Card } from "../Card/card";
 
-export class CardBox extends React.Component{
-    render() {
-        
-        const {list} = this.props
-        console.log(list);
-        const obj = {}
-        list.forEach((value,index) => {
-            obj[index] = value
-        });
-        console.log(obj);
+export class CardBox extends React.Component {
+ 
 
+  render() {
+    
+    const { list, removeToDo } = this.props;
+    return (
+      <div className={style.cardBox}>
+        {list.map((text) => (
+          <Card key={text.id} text={text.text} onClick={()=>removeToDo(text.id)} />
+        ))}
+      </div>
+    );
+  }
+}
 
-        return (
-          <div className={style.cardBox}>
-            {list.map((text, index) => (
-                <Cards key={index} {...text} />
-            ))}
-          </div>
-        );
-    }
+CardBox.propTypes = {
+  list: PropTypes.array
 }

@@ -1,22 +1,22 @@
 import React from "react";
-import style from "./cards.module.css"
+import style from "../CardBox/cardBox.module.css"
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 
-export class Cards extends React.Component{
-  render() {
+export class Card extends React.Component{
+    render() {
 
-    console.log(this.props);
-    
+        const { text, onClick } = this.props
+        
         return (
           <div className={style.cards}>
             <div className={style.cardsText}>
-              <p>{this.props.list }</p>
+              <p>{text}</p>
             </div>
             <div className={style.icons}>
               <span>
                 <FiEdit />
               </span>
-              <span>
+              <span onClick={onClick}>
                 <FiTrash2 />
               </span>
             </div>
